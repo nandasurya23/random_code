@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Post List</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Post List</h1>
+      <button id="add-post-btn" onclick="addPost()">Add Post</button>
+      <ul id="post-list">
+        {{range .}}
+        <li>
+          <h2>{{.Title}}</h2>
+          <p>{{.Body}}</p>
+          <small>Author ID: {{.UserID}}</small>
+        </li>
+        {{end}}
+      </ul>
+    </div>
+
+    <script>
+      // Function to send POST request to add new post
+      function addPost() {
+        fetch("/", {
+          method: "POST",
+        })
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("post-list").innerHTML = data;
+          })
+          .catch((error) => console.error("Error adding post:", error));
+      }
+    </script>
+  </body>
+</html>

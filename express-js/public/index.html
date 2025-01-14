@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login & Register with JWT</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Login/Register</h1>
+
+    <!-- Form Login/Register -->
+    <div id="authForm">
+      <h2>Login</h2>
+      <form id="loginForm">
+        <input type="email" id="loginEmail" placeholder="Email" required />
+        <input type="password" id="loginPassword" placeholder="Password" required />
+        <button type="submit">Login</button>
+        <a href="javascript:void(0)" id="showRegister">Belum punya akun? Daftar</a>
+      </form>
+
+      <h2 id="registerHeader" style="display: none;">Register</h2>
+      <form id="registerForm" style="display: none;">
+        <input type="text" id="registerUsername" placeholder="Username" required />
+        <input type="email" id="registerEmail" placeholder="Email" required />
+        <input type="password" id="registerPassword" placeholder="Password" required />
+        <input type="password" id="registerPasswordConfirm" placeholder="Confirm Password" required />
+        <button type="submit">Register</button>
+        <a href="javascript:void(0)" id="showLogin">Sudah punya akun? Login</a>
+      </form>
+    </div>
+
+    <!-- Display User Details -->
+    <div id="userDetails" class="user-details" style="display: none;">
+      <p>Name: <span id="name"></span></p>
+      <p>Email: <span id="email"></span></p>
+      <img id="avatar" src="" alt="User Avatar" />
+    </div>
+    
+  </div>
+
+  <script href="script.js"></script>
+</body>
+</html>

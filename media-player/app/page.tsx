@@ -22,6 +22,7 @@ const MediaPlayer = () => {
   const [trackCurrentTime, setTrackCurrentTime] = useState<number>(0);
   const [loading, setLoading] = useState<boolean>(false);
 
+
   useEffect(() => {
     if (audio) {
       const updateProgress = () => {
